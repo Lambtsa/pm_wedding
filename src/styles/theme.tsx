@@ -8,6 +8,8 @@ const colors = {
   primary10: "rgba(40, 65, 53, 0.1)",
   primaryDark: "#21352B",
   secondary: "#FFFEEB",
+  secondary20: "rgba(255, 254, 235, 0.2)",
+  secondary70: "rgba(255, 254, 235, 0.7)",
   white: "#FFFEEB",
 };
 

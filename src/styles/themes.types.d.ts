@@ -5,6 +5,8 @@ interface Colors {
   primary10: string;
   primaryDark: string;
   secondary: string;
+  secondary20: string;
+  secondary70: string;
   white: string;
 }
 
