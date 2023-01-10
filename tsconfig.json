@@ -30,6 +30,11 @@
       "@styles": ["styles/index"],
       "@customTypes": ["types/index"]
     },
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
     "typeRoots": ["./node_modules/@types", "./typings"],
     "esModuleInterop": true,
     "skipLibCheck": true,

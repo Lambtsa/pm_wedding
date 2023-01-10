@@ -26,24 +26,34 @@ export const SlantedDivBottom = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
 `;
 
-export const SplitScreenContainer = styled.section`
+export const SplitScreenContainerTop = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
   justify-content: center;
   align-items: center;
   height: 100vh;
   z-index: 100;
+  background-color: red;
+  overflow: hidden;
+  margin-top: -150px;
   background-color: ${(props) => props.theme.colors.primary};
+  clip-path: polygon(0% 150px, 100% 0%, 100% 100%, 0% 100%);
+`;
+
+export const SplitScreenContainerBottom = styled.section`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: red;
+  overflow: hidden;
+  background-color: ${(props) => props.theme.colors.primary};
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 150px), 0% 100%);
 `;
 
 export const Img = styled(Image)`
   width: 100%;
-  height: 150%;
   object-fit: cover;
-  /* overflow-x: hidden; */
-  margin-top: -180px;
   z-index: 10;
-  /* margin-bottom: 260px; */
-  clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
 `;

@@ -3,14 +3,16 @@ import styled from "styled-components";
 import { ReactComponent as Dala } from "@assets/dalahast.svg";
 
 export const CountdownContainer = styled.section`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 96px 0;
   background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
-  /* height: 100vh; */
+  height: 100vh;
   color: ${(props) => props.theme.colors.white};
+  /* TODO: figure out mobile */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 150px), 0 100%);
 `;
 
 export const InnerContainer = styled.div`
@@ -49,7 +51,7 @@ export const Subtitle = styled.p`
 export const Dalahast = styled(Dala)`
   position: absolute;
   right: 16px;
-  top: 16px;
+  bottom: 166px;
 `;
 
 export const CountdownTimerContainer = styled.div`
@@ -92,15 +94,15 @@ export const TimerTitle = styled.h3`
   }
 `;
 
-export const SlantedDiv = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  background-color: ${(props) => props.theme.colors.secondary};
-  width: 100%;
-  height: 200px;
-  color: ${(props) => props.theme.colors.white};
-  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
-`;
+// export const SlantedDiv = styled.div`
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100px;
+//   background-color: ${(props) => props.theme.colors.secondary};
+//   width: 100%;
+//   height: 200px;
+//   color: ${(props) => props.theme.colors.white};
+//   clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+// `;

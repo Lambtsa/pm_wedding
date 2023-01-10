@@ -1,20 +1,22 @@
 import {
-  SlantedDivBottom,
-  SlantedDivTop,
-  SplitScreenContainer,
+  SplitScreenContainerTop,
+  SplitScreenContainerBottom,
   Img,
 } from "./SplitScreen.styles";
-import Picture from "@assets/images/IMG_5351.webp";
+import Couple from "@assets/images/IMG_6151.webp";
+import Family from "@assets/images/IMG_5351.webp";
 
 export const SplitScreen = (): JSX.Element => {
   return (
     <>
-      <SlantedDivTop />
-      <SplitScreenContainer>
-        <Img alt="" src={Picture} />
+      <SplitScreenContainerTop>
+        <Img alt="" src={Couple} />
         <p>test</p>
-      </SplitScreenContainer>
-      <SlantedDivBottom />
+      </SplitScreenContainerTop>
+      <SplitScreenContainerBottom>
+        <p>test</p>
+        <Img alt="" src={Family} />
+      </SplitScreenContainerBottom>
     </>
   );
 };
