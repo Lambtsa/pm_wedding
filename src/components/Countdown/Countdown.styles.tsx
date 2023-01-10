@@ -1,5 +1,6 @@
 import { CONTAINER, MEDIA } from "@constants/layout";
 import styled from "styled-components";
+import { ReactComponent as Dala } from "@assets/dalahast.svg";
 
 export const CountdownContainer = styled.section`
   display: flex;
@@ -45,6 +46,12 @@ export const Subtitle = styled.p`
   margin-bottom: 16px;
 `;
 
+export const Dalahast = styled(Dala)`
+  position: absolute;
+  right: 16px;
+  top: 16px;
+`;
+
 export const CountdownTimerContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -86,6 +93,7 @@ export const TimerTitle = styled.h3`
 `;
 
 export const SlantedDiv = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

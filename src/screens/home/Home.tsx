@@ -1,17 +1,15 @@
 import {
   EighthDiv,
   FifthDiv,
-  FirstDiv,
   ForthDiv,
-  SecondDiv,
   SeventhDiv,
-  SixthDiv,
   ThirdDiv,
 } from "./Home.styles";
 import { Jumbotron } from "@components/Jumbotron";
 import { Header } from "@components/Header";
 import { Countdown } from "@components/Countdown";
 import { Main } from "@components/Main";
+import { SplitScreen } from "@components/SplitScreen";
 
 export const HomeScreen = (): JSX.Element => {
   return (
@@ -19,9 +17,7 @@ export const HomeScreen = (): JSX.Element => {
       <Header />
       <Jumbotron />
       <Countdown />
-      <SixthDiv />
-      <FirstDiv>Hello World</FirstDiv>
-      <SecondDiv />
+      <SplitScreen />
       <ThirdDiv />
       <ForthDiv>Hello World</ForthDiv>
       <FifthDiv />

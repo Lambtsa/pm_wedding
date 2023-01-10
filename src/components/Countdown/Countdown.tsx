@@ -1,6 +1,7 @@
 import {
   CountdownContainer,
   CountdownTimerContainer,
+  Dalahast,
   InnerContainer,
   SlantedDiv,
   Subtitle,
@@ -33,7 +34,9 @@ export const Countdown = (): JSX.Element => {
           </CountdownTimerContainer>
         </InnerContainer>
       </CountdownContainer>
-      <SlantedDiv />
+      <SlantedDiv>
+        <Dalahast />
+      </SlantedDiv>
     </>
   );
 };
