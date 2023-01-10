@@ -1,30 +1,22 @@
 import "styled-components";
 
 interface Colors {
-  chelseaCucumber: string;
-  eerieBlack: string;
-  eerieBlack20: string;
-  eerieBlack70: string;
-  ivory: string;
-  ivory20: string;
-  ivory70: string;
-  newYorkPink: string;
-  oldRose: string;
-  onyx: string;
-  pastelPink: string;
-  pastelPink20: string;
-  tiffanyBlue: string;
-  tiffanyBlue20: string;
-  viridianGreen: string;
+  primary: string;
+  primary10: string;
+  primaryDark: string;
+  secondary: string;
+  white: string;
 }
 
 interface Fonts {
-  notoSerif: string;
+  montserrat: string;
+  parisienne: string;
 }
 
 interface FontWeights {
   bold: string;
   regular: string;
+  light: string;
 }
 
 interface ZIndexes {

@@ -5,10 +5,10 @@ export const FirstDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #bb3e17;
+  background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
   height: 100vh;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const SecondDiv = styled.div`
@@ -16,10 +16,10 @@ export const SecondDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #bb3e17;
+  background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
   height: 200px;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
   clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
 `;
 
@@ -28,11 +28,11 @@ export const ThirdDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #e8ae68;
+  background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
   height: 200px;
   margin-top: -140px;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
   clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
 `;
 
@@ -41,10 +41,10 @@ export const ForthDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #e8ae68;
+  background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
   height: 100vh;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
 `;
 
 export const FifthDiv = styled.div`
@@ -52,10 +52,10 @@ export const FifthDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #e8ae68;
+  background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
   height: 200px;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
   clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
 `;
 
@@ -64,11 +64,11 @@ export const SixthDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #bb3e17;
+  background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
   height: 200px;
   margin-top: -140px;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
   clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
 `;
 
@@ -77,11 +77,11 @@ export const SeventhDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #9a3212;
+  background-color: ${(props) => props.theme.colors.primaryDark};
   width: 100%;
   height: 200px;
   margin-top: -140px;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
   clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
 `;
 
@@ -90,8 +90,8 @@ export const EighthDiv = styled.div`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #9a3212;
+  background-color: ${(props) => props.theme.colors.primaryDark};
   width: 100%;
   height: 100vh;
-  color: #fffeeb;
+  color: ${(props) => props.theme.colors.white};
 `;
