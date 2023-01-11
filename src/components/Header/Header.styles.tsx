@@ -28,3 +28,10 @@ export const HeaderLink = styled.p`
   line-height: 16px;
   font-style: italic;
 `;
+
+export const LanguageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`;

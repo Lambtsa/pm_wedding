@@ -5,17 +5,17 @@ import {
   Title,
 } from "./Jumbotron.styles";
 import { ReactComponent as DecorationIcon } from "@assets/deco.svg";
+import { useTranslation } from "@hooks/useTranslation";
 
 export const Jumbotron = (): JSX.Element => {
+  const { t } = useTranslation();
   return (
     <JumbotronContainer>
       <JumbotronInnerContainer>
         <DecorationIcon />
         <div>
-          <Title>Pierre & Michelle</Title>
-          <Subtitle>
-            Le bonheur est la seule chose qui se double si on le partage
-          </Subtitle>
+          <Title>{t({ id: "jumbotron.title" })}</Title>
+          <Subtitle>{t({ id: "jumbotron.subtitle" })}</Subtitle>
         </div>
         <DecorationIcon />
       </JumbotronInnerContainer>

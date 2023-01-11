@@ -21,6 +21,7 @@ export const InnerContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
+  padding: 16px;
   max-width: ${CONTAINER.TABLET}px;
 `;
 

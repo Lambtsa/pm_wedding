@@ -1,37 +1,12 @@
-import { MEDIA } from "@constants/layout";
+import { CONTAINER, MEDIA } from "@constants/layout";
 import Image from "next/image";
 import styled from "styled-components";
-
-export const SlantedDivTop = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  background-color: ${(props) => props.theme.colors.primary};
-  width: 100%;
-  height: 200px;
-  margin-top: -140px;
-  color: ${(props) => props.theme.colors.white};
-  clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
-`;
-
-export const SlantedDivBottom = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  background-color: ${(props) => props.theme.colors.primary};
-  width: 100%;
-  height: 200px;
-  color: ${(props) => props.theme.colors.white};
-  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
-`;
 
 export const SplitScreenContainerTop = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  align-items: center;
+  justify-items: center;
+  align-content: center;
   height: 100vh;
   z-index: 100;
   background-color: red;
@@ -47,6 +22,7 @@ export const ActivitiesContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
+  padding: 16px;
 `;
 
 export const ActivitiesTitleContainer = styled.div``;
@@ -84,7 +60,9 @@ export const ActivitiesBtnContainer = styled.div`
   gap: 8px;
 `;
 
-export const ActivityBtn = styled.button`
+export const ActivityBtn = styled.button<{
+  selected: boolean;
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,20 +73,38 @@ export const ActivityBtn = styled.button`
   height: 120px;
   color: ${(props) => props.theme.colors.secondary};
 
+  background-color: ${(props) =>
+    props.selected ? props.theme.colors.secondary20 : "transparent"};
+
   p:first-child {
     font-size: 36px;
   }
 
   :hover {
     background-color: ${(props) => props.theme.colors.secondary20};
+    box-shadow: 0 0 10px 10px ${(props) => props.theme.colors.primaryDark};
+  }
+`;
+
+export const ActivitiesFormContainer = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  /* gap: 16px; */
+  width: 100%;
+  max-width: ${CONTAINER.MOBILE}px;
+
+  button {
+    margin-top: 16px;
   }
 `;
 
 export const SplitScreenContainerBottom = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  align-items: center;
+  justify-items: center;
+  align-content: center;
   height: 100vh;
   background-color: red;
   overflow: hidden;
