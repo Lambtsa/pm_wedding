@@ -9,6 +9,7 @@ import {
   ActivitiesBtnContainer,
   ActivityBtn,
   ActivitiesFormContainer,
+  Dalahast,
 } from "./SplitScreen.styles";
 import Couple from "@assets/images/IMG_6151.webp";
 import Family from "@assets/images/IMG_5351.webp";
@@ -230,6 +231,7 @@ export const SplitScreen = (): JSX.Element => {
             />
             <Button />
           </ActivitiesFormContainer>
+          <Dalahast />
         </ActivitiesContainer>
         <Img alt="" src={Family} />
       </SplitScreenContainerBottom>

@@ -5,4 +5,5 @@ export const ButtonStyled = styled.button`
   padding: 16px 32px;
   border-radius: 10px;
   width: 240px;
+  color: ${(props) => props.theme.colors.primary};
 `;

@@ -1,6 +1,7 @@
 import { CONTAINER, MEDIA } from "@constants/layout";
 import Image from "next/image";
 import styled from "styled-components";
+import { ReactComponent as Dala } from "@assets/dalahast.svg";
 
 export const SplitScreenContainerTop = styled.section`
   display: grid;
@@ -14,6 +15,10 @@ export const SplitScreenContainerTop = styled.section`
   margin-top: -150px;
   background-color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0% 150px, 100% 0%, 100% 100%, 0% 100%);
+
+  img {
+    margin-top: -150px;
+  }
 `;
 
 export const ActivitiesContainer = styled.div`
@@ -101,6 +106,7 @@ export const ActivitiesFormContainer = styled.form`
 `;
 
 export const SplitScreenContainerBottom = styled.section`
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
@@ -110,10 +116,24 @@ export const SplitScreenContainerBottom = styled.section`
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 150px), 0% 100%);
+
+  img {
+    margin-top: -150px;
+  }
 `;
 
 export const Img = styled(Image)`
   width: 100%;
   object-fit: cover;
   z-index: 10;
+  height: calc(100% + 300px);
+`;
+
+export const Dalahast = styled(Dala)`
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  path {
+    stroke: ${(props) => props.theme.colors.secondary};
+  }
 `;

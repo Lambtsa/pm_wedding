@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Dala } from "@assets/dalahast.svg";
 
 export const HeaderContainer = styled.div`
   position: absolute;
@@ -34,4 +35,10 @@ export const LanguageContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
+`;
+
+export const Dalahast = styled(Dala)`
+  path {
+    stroke: ${(props) => props.theme.colors.primary};
+  }
 `;

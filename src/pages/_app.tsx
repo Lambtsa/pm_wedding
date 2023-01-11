@@ -8,7 +8,6 @@ import { useLanguage } from "@hooks/useLanguage";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const { locale, translations } = useLanguage();
-  console.log({ IntlProvider, locale, translations });
 
   return (
     <ThemeProvider theme={theme}>
