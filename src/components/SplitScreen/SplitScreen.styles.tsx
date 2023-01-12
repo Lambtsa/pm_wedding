@@ -10,7 +10,6 @@ export const SplitScreenContainerTop = styled.section`
   align-content: center;
   height: 100vh;
   z-index: 100;
-  background-color: red;
   overflow: hidden;
   margin-top: -150px;
   background-color: ${(props) => props.theme.colors.primary};
@@ -112,7 +111,6 @@ export const SplitScreenContainerBottom = styled.section`
   justify-items: center;
   align-content: center;
   height: 100vh;
-  background-color: red;
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 150px), 0% 100%);

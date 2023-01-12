@@ -3,6 +3,7 @@ import "styled-components";
 interface Colors {
   primary: string;
   primary10: string;
+  primary70: string;
   primaryDark: string;
   secondary: string;
   secondary20: string;

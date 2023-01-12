@@ -58,6 +58,10 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="canonical" href="" />
           <link rel="apple-touch-icon" href="/logo192.png" />
+          <link
+            href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
+            rel="stylesheet"
+          />
           {/* enable google analytics script */}
           {/* TODO: add preconnect to google.tagmanager.com */}
           <script

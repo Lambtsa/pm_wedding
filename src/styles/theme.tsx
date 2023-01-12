@@ -6,6 +6,7 @@ import type { DefaultTheme } from "styled-components";
 const colors = {
   primary: "#284135",
   primary10: "rgba(40, 65, 53, 0.1)",
+  primary70: "rgba(40, 65, 53, 0.7)",
   primaryDark: "#21352B",
   secondary: "#FFFEEB",
   secondary20: "rgba(255, 254, 235, 0.2)",
