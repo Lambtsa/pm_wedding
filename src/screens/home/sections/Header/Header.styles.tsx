@@ -34,7 +34,7 @@ export const BurgerMenuBtn = styled.button`
 export const CloseBtn = styled.button<{
   isOpen: boolean;
 }>`
-  position: absolute;
+  position: fixed;
   top: 16px;
   right: 16px;
   z-index: 20;
