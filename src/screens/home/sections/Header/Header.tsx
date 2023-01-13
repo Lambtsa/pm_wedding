@@ -1,5 +1,7 @@
 import { LanguageToggle } from "@components/LanguageToggle";
+import { routes } from "@helpers/routes";
 import { useTranslation } from "@hooks/useTranslation";
+import Link from "next/link";
 import {
   Dalahast,
   HeaderContainer,
@@ -11,7 +13,9 @@ export const Header = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <HeaderContainer>
-      <Dalahast />
+      <Link href={routes.index()}>
+        <Dalahast />
+      </Link>
       <HeaderLinksContainer>
         <HeaderLink scroll={false} href="#">
           {t({ id: "header.ourStory" })}

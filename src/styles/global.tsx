@@ -49,12 +49,7 @@ export const GlobalStyle = createGlobalStyle`
   #__next {
     width: 100%;
     min-height: 100vh;
-  }
-
-  @media screen and (prefers-reduced-motion: reduce) {
-	  html {
-      scroll-behavior: auto;
-    }
+    scroll-behavior: smooth;
   }
 
   #__next {
