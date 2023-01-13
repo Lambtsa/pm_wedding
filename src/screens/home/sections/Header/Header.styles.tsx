@@ -86,8 +86,12 @@ export const HeaderLink = styled(Link)`
   font-style: italic;
   scroll-behavior: smooth;
 
-  :hover {
-    text-decoration: underline;
+  /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover */
+  @media (hover: hover) {
+    /* when hover is supported */
+    :hover {
+      text-decoration: underline;
+    }
   }
 `;
 

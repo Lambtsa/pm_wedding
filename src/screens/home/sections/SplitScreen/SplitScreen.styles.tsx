@@ -105,9 +105,13 @@ export const ActivityBtn = styled.button<{
     font-size: 36px;
   }
 
-  :hover {
-    background-color: ${(props) => props.theme.colors.secondary20};
-    box-shadow: 0 0 10px 10px ${(props) => props.theme.colors.primaryDark};
+  /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover */
+  @media (hover: hover) {
+    /* when hover is supported */
+    :hover {
+      background-color: ${(props) => props.theme.colors.secondary20};
+      box-shadow: 0 0 10px 10px ${(props) => props.theme.colors.primaryDark};
+    }
   }
 
   @media ${MEDIA.MOBILE} {
