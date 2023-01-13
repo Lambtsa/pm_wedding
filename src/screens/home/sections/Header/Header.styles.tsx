@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Dala } from "@assets/dalahast.svg";
+import Link from "next/link";
 
 export const HeaderContainer = styled.div`
   position: absolute;
@@ -21,20 +22,18 @@ export const HeaderLinksContainer = styled.div`
   gap: 16px;
 `;
 
-export const HeaderLink = styled.p`
+export const HeaderLink = styled(Link)`
   color: ${(props) => props.theme.colors.primary};
   font-weight: ${(props) => props.theme.fontWeights.regular};
   text-align: center;
   font-size: 16px;
   line-height: 16px;
   font-style: italic;
-`;
+  scroll-behavior: smooth;
 
-export const LanguageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
+  :hover {
+    text-decoration: underline;
+  }
 `;
 
 export const Dalahast = styled(Dala)`

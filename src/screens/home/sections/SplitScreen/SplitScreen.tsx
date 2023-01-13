@@ -10,6 +10,7 @@ import {
   ActivityBtn,
   ActivitiesFormContainer,
   Dalahast,
+  ActivityText,
 } from "./SplitScreen.styles";
 import Couple from "@assets/images/IMG_6151.webp";
 import Family from "@assets/images/IMG_5351.webp";
@@ -20,6 +21,7 @@ import { TypeOf, z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputText } from "@components/InputText";
+import { useTranslation } from "@hooks/useTranslation";
 
 type ActivityType =
   | "horse"
@@ -33,11 +35,12 @@ type ActivityType =
 
 interface Activity {
   id: ActivityType;
-  title: string;
+  title: FormatjsIntl.Message["ids"];
   icon: string;
 }
 
 export const SplitScreen = (): JSX.Element => {
+  const { t } = useTranslation();
   /* ################################################## */
   /* State */
   /* ################################################## */
@@ -90,50 +93,46 @@ export const SplitScreen = (): JSX.Element => {
       {
         id: "horse",
         icon: "🐎",
-        title: "Balade à cheval",
+        title: "activities.horse",
       },
       {
         id: "boules",
         icon: "👴🏻",
-        title: "Tournoi de pétanque",
+        title: "activities.boules",
       },
       {
         id: "climbing",
         icon: "🧗🏻",
-        title: "Escalade",
+        title: "activities.climbing",
       },
       {
         id: "volleyball",
         icon: "🏐",
-        title: "Volleyball",
+        title: "activities.volleyball",
       },
       {
         id: "hiking",
         icon: "🥾",
-        title: "Randonnée",
+        title: "activities.hiking",
       },
       {
         id: "paragliding",
         icon: "🪂",
-        title: "Parapente",
+        title: "activities.paragliding",
       },
       {
         id: "yoga",
         icon: "🧘🏼‍♂️",
-        title: "Yoga",
+        title: "activities.yoga",
       },
       {
         id: "spa",
         icon: "🧖",
-        title: "Spa",
+        title: "activities.spa",
       },
     ],
     []
   );
-
-  useEffect(() => {
-    console.log({ selectedActivities });
-  }, [selectedActivities]);
 
   /* ################################################## */
   /* Actions */
@@ -170,23 +169,15 @@ export const SplitScreen = (): JSX.Element => {
     [selectedActivities]
   );
 
-  // const createActivityString = useMemo(
-  //   () => {
-
-  //     "Vous avez sélectionné le tournoi de pétanques et la parapente. Remplissez le formulaire en dessous pour valider votre choix."
-  //   },
-  //   []
-  // )
-
   const hasActivities = !!activities.length;
   return (
     <>
-      <SplitScreenContainerTop>
+      <SplitScreenContainerTop id="activites">
         <Img alt="" src={Couple} />
         <ActivitiesContainer>
           <ActivitiesTitleContainer>
-            <Title>Activités</Title>
-            <Subtitle>Séléctionnez une ou plusieurs activités</Subtitle>
+            <Title>{t({ id: "activities.selectTitle" })}</Title>
+            <Subtitle>{t({ id: "activities.selectSubtitle" })}</Subtitle>
           </ActivitiesTitleContainer>
           <ActivitiesBtnContainer>
             {hasActivities &&
@@ -197,7 +188,7 @@ export const SplitScreen = (): JSX.Element => {
                   key={activity.id}
                 >
                   <p>{activity.icon}</p>
-                  <p>{activity.title}</p>
+                  <ActivityText>{t({ id: activity.title })}</ActivityText>
                 </ActivityBtn>
               ))}
             <Forward />
@@ -207,12 +198,8 @@ export const SplitScreen = (): JSX.Element => {
       <SplitScreenContainerBottom>
         <ActivitiesContainer>
           <ActivitiesTitleContainer>
-            <Title>Activités</Title>
-            <Subtitle>
-              {
-                "Vous avez sélectionné le tournoi de pétanques et la parapente. N'oubliez pas de valider votre choix."
-              }
-            </Subtitle>
+            <Title>{t({ id: "activities.validateTitle" })}</Title>
+            <Subtitle>{t({ id: "activities.validateSubtitle" })}</Subtitle>
           </ActivitiesTitleContainer>
           <ActivitiesFormContainer onSubmit={onSubmit}>
             <InputText
@@ -220,16 +207,16 @@ export const SplitScreen = (): JSX.Element => {
               control={control}
               name="name"
               error={formErrors.name}
-              placeholder="Prénom"
+              placeholder={t({ id: "activities.form.name.placeholder" })}
             />
             <InputText
               type="text"
               control={control}
               name="email"
               error={formErrors.email}
-              placeholder="Email"
+              placeholder={t({ id: "activities.form.email.placeholder" })}
             />
-            <Button />
+            <Button text={t({ id: "activities.form.submit" })} />
           </ActivitiesFormContainer>
           <Dalahast />
         </ActivitiesContainer>

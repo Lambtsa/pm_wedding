@@ -1,11 +1,13 @@
 import { SocialIcons } from "@components/SocialIcons";
+import { useTranslation } from "@hooks/useTranslation";
 import { FooterContainer } from "./Footer.styles";
 
 export const Footer = (): JSX.Element => {
+  const { t } = useTranslation();
   return (
     <FooterContainer>
       <SocialIcons />
-      {`© ${new Date().getFullYear()} P&M. Tous droits réservés`}
+      {t({ id: "footer.copyright" }, { date: new Date().getFullYear() })}
     </FooterContainer>
   );
 };

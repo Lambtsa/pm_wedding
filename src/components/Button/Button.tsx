@@ -1,5 +1,10 @@
+import React from "react";
 import { ButtonStyled } from "./Button.styles";
 
-export const Button = (): JSX.Element => {
-  return <ButtonStyled>Valider</ButtonStyled>;
+interface ButtonProps {
+  text: string;
+}
+
+export const Button = ({ text }: ButtonProps): JSX.Element => {
+  return <ButtonStyled>{text}</ButtonStyled>;
 };

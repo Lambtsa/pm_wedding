@@ -32,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+    text-decoration: none;
     cursor: pointer;
   }
 
@@ -48,7 +49,12 @@ export const GlobalStyle = createGlobalStyle`
   #__next {
     width: 100%;
     min-height: 100vh;
-    /* height: 100%; */
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+	  html {
+      scroll-behavior: auto;
+    }
   }
 
   #__next {

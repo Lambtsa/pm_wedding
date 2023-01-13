@@ -25,7 +25,6 @@ export const Map = (): JSX.Element => {
       zoom: 15,
       minZoom: 7,
       maxZoom: 15,
-      dragPan: false,
     });
 
     new mapboxgl.Marker()

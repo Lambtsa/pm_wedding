@@ -11,8 +11,10 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputText } from "@components/InputText";
 import { Button } from "@components/Button";
+import { useTranslation } from "@hooks/useTranslation";
 
 export const Contact = (): JSX.Element => {
+  const { t } = useTranslation();
   /* ################################################## */
   /* State */
   /* ################################################## */
@@ -81,11 +83,9 @@ export const Contact = (): JSX.Element => {
 
   return (
     <ContactContainer>
-      <ActivitiesTitleContainer>
-        <Title>Contactez-nous</Title>
-        <Subtitle>
-          {"Laissez-nous un message et nous vous recontacterons dès possible."}
-        </Subtitle>
+      <ActivitiesTitleContainer id="contact">
+        <Title>{t({ id: "contact.title" })}</Title>
+        <Subtitle>{t({ id: "contact.subtitle" })}</Subtitle>
       </ActivitiesTitleContainer>
       <ContactFormContainer onSubmit={onSubmit}>
         <InputText
@@ -93,23 +93,23 @@ export const Contact = (): JSX.Element => {
           control={control}
           name="name"
           error={formErrors.name}
-          placeholder="Prénom"
+          placeholder={t({ id: "contact.form.firstName" })}
         />
         <InputText
           type="text"
           control={control}
           name="email"
           error={formErrors.email}
-          placeholder="Email"
+          placeholder={t({ id: "contact.form.email" })}
         />
         <InputText
           type="text"
           control={control}
           name="message"
           error={formErrors.message}
-          placeholder="Message"
+          placeholder={t({ id: "contact.form.message" })}
         />
-        <Button />
+        <Button text={t({ id: "contact.form.submit" })} />
       </ContactFormContainer>
     </ContactContainer>
   );

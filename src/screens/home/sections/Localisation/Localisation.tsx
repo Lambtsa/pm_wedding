@@ -12,7 +12,7 @@ import {
 export const Localisation = (): JSX.Element => {
   return (
     <LocalisationContainer>
-      <Title>Localisation</Title>
+      <Title id="localisation">Localisation</Title>
       <Subtitle>Les Genévriers, La Plaine</Subtitle>
       <LocalisationInnerContainer>
         <Map />

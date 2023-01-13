@@ -55,6 +55,14 @@ export const Subtitle = styled.p`
   margin-bottom: 16px;
 `;
 
+export const ActivityText = styled.p`
+  color: ${(props) => props.theme.colors.secondary70};
+  font-weight: ${(props) => props.theme.fontWeights.regular};
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+`;
+
 export const ActivitiesBtnContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

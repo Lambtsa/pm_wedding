@@ -1,24 +1,16 @@
 import type { AppProps } from "next/app";
-import { IntlProvider } from "react-intl";
 import { ThemeProvider } from "styled-components";
-import { Fragment } from "react";
 import { theme } from "@styles";
 import { GlobalStyle } from "@styles";
-import { useLanguage } from "@hooks/useLanguage";
+import { LanguageProvider } from "@context/LanguageContext";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const { locale, translations } = useLanguage();
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <IntlProvider
-        locale={locale}
-        messages={translations}
-        textComponent={Fragment}
-      >
+      <LanguageProvider>
         <Component {...pageProps} />
-      </IntlProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
