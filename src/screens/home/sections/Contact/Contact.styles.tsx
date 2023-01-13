@@ -51,4 +51,8 @@ export const ContactFormContainer = styled.form`
   /* gap: 16px; */
   width: 100%;
   max-width: ${CONTAINER.MOBILE}px;
+
+  button {
+    margin-top: 16px;
+  }
 `;

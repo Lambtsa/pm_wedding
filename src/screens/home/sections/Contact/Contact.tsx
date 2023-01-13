@@ -12,9 +12,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { InputText } from "@components/InputText";
 import { Button } from "@components/Button";
 import { useTranslation } from "@hooks/useTranslation";
+import { useLanguage } from "@context/LanguageContext";
 
 export const Contact = (): JSX.Element => {
   const { t } = useTranslation();
+  const { locale } = useLanguage();
   /* ################################################## */
   /* State */
   /* ################################################## */
@@ -24,9 +26,23 @@ export const Contact = (): JSX.Element => {
   /* Forms */
   /* ################################################## */
   const validationSchema = z.object({
-    name: z.string().trim(),
-    email: z.string().trim(),
-    message: z.string(),
+    name: z
+      .string({
+        required_error: t({ id: "contact.form.firstNameError" }),
+      })
+      .min(1, { message: t({ id: "contact.form.minError" }) })
+      .trim(),
+    email: z
+      .string({
+        required_error: t({ id: "contact.form.emailError" }),
+      })
+      .min(1, { message: t({ id: "contact.form.minError" }) })
+      .trim(),
+    message: z
+      .string({
+        required_error: t({ id: "contact.form.messageError" }),
+      })
+      .min(1, { message: t({ id: "contact.form.minError" }) }),
   });
 
   type FormFields = TypeOf<typeof validationSchema>;
@@ -44,7 +60,7 @@ export const Contact = (): JSX.Element => {
    * Options chosen
    * https://react-hook-form.com/api/useform/
    */
-  const { control, formState, handleSubmit, reset } = useForm({
+  const { control, formState, handleSubmit, reset, clearErrors } = useForm({
     defaultValues,
     mode: "onSubmit",
     shouldFocusError: true,
@@ -60,6 +76,10 @@ export const Contact = (): JSX.Element => {
   useEffect(() => {
     reset(defaultValues, { keepDefaultValues: true });
   }, [reset, defaultValues]);
+
+  useEffect(() => {
+    clearErrors();
+  }, [clearErrors, defaultValues, locale, reset]);
 
   /* ################################################## */
   /* Actions */

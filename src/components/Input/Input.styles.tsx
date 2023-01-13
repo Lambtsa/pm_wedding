@@ -31,7 +31,7 @@ export const ErrorMessage = styled.p`
   font-size: 12px;
   line-height: 16px;
   padding-left: 8px;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secondary};
 `;
 
 export const MessageWrapper = styled.div`

@@ -22,6 +22,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputText } from "@components/InputText";
 import { useTranslation } from "@hooks/useTranslation";
+import { useLanguage } from "@context/LanguageContext";
 
 type ActivityType =
   | "horse"
@@ -41,6 +42,7 @@ interface Activity {
 
 export const SplitScreen = (): JSX.Element => {
   const { t } = useTranslation();
+  const { locale } = useLanguage();
   /* ################################################## */
   /* State */
   /* ################################################## */
@@ -53,8 +55,18 @@ export const SplitScreen = (): JSX.Element => {
   /* Forms */
   /* ################################################## */
   const validationSchema = z.object({
-    name: z.string().trim(),
-    email: z.string().trim(),
+    name: z
+      .string({
+        required_error: t({ id: "activities.form.name.placeholderError" }),
+      })
+      .min(1, { message: t({ id: "contact.form.minError" }) })
+      .trim(),
+    email: z
+      .string({
+        required_error: t({ id: "activities.form.email.placeholderError" }),
+      })
+      .min(1, { message: t({ id: "contact.form.minError" }) })
+      .trim(),
   });
 
   type FormFields = TypeOf<typeof validationSchema>;
@@ -71,7 +83,7 @@ export const SplitScreen = (): JSX.Element => {
    * Options chosen
    * https://react-hook-form.com/api/useform/
    */
-  const { control, formState, handleSubmit, reset } = useForm({
+  const { control, formState, handleSubmit, reset, clearErrors } = useForm({
     defaultValues,
     mode: "onSubmit",
     shouldFocusError: true,
@@ -87,6 +99,10 @@ export const SplitScreen = (): JSX.Element => {
   useEffect(() => {
     reset(defaultValues, { keepDefaultValues: true });
   }, [reset, defaultValues]);
+
+  useEffect(() => {
+    clearErrors();
+  }, [clearErrors, locale]);
 
   const activities: Activity[] = useMemo(
     () => [

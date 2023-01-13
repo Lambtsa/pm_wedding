@@ -25,13 +25,21 @@
   "activities.validateTitle": "Activités sélectionnées",
   "activities.validateSubtitle": "Vous avez sélectionné vos activités. N'oubliez pas de valider votre choix",
   "activities.form.name.placeholder": "Prénom",
+  "activities.form.name.placeholderError": "First name est un champ obligatoire",
   "activities.form.email.placeholder": "Email",
+  "activities.form.email.placeholderError": "Email est un champ obligatoire",
   "activities.form.submit": "Envoyer",
   "contact.title": "Contactez-nous",
   "contact.subtitle": "Laissez-nous un message et nous vous recontacterons dès possible",
   "contact.form.submit": "Submit",
   "contact.form.firstName": "Prénom",
+  "contact.form.firstNameError": "Prénom est un champ obligatoire",
   "contact.form.email": "Email",
+  "contact.form.emailError": "Email est un champ obligatoire",
   "contact.form.message": "Message",
-  "footer.copyright": "© {date} P&M. Tous droits réservés"
+  "contact.form.messageError": "Message est un champ obligatoire",
+  "contact.form.minError": "Doit comporter au minimum 1 charactère",
+  "footer.copyright": "© {date} P&M. Tous droits réservés",
+  "metadata.title": "Pierre & Michelle | Rejoignez-nous pour célébrer notre union",
+  "metadata.description": "Pierre & Michelle souhaitent vous inviter à célébrer leur union le 14 Juillet 2023 dans nos belle vosges"
 }
