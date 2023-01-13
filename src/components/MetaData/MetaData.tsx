@@ -2,7 +2,9 @@ import Head from "next/head";
 import type { MetaData as MetaDataProps } from "@helpers/metadata";
 import { useTranslation } from "@hooks/useTranslation";
 
-const isProduction = process.env.NODE_ENV === "production";
+const isProduction = false;
+/* TODO: Sort this out */
+// const isProduction = process.env.NODE_ENV === "production";
 
 export const MetaData = ({
   title,
