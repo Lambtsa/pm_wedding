@@ -19,6 +19,11 @@ export const SplitScreenContainerTop = styled.section`
     margin-top: -150px;
   }
 
+  > div {
+    /* Because of the slant the content doesn't look centered even though it is. We therefore use half of the slant height to readjust */
+    margin-top: 75px;
+  }
+
   @media ${MEDIA.TABLET} {
     grid-template-columns: 1fr;
 
@@ -140,8 +145,14 @@ export const SplitScreenContainerBottom = styled.section`
     margin-top: -150px;
   }
 
+  > div {
+    /* Because of the slant the content doesn't look centered even though it is. We therefore use half of the slant height to readjust */
+    margin-bottom: 75px;
+  }
+
   @media ${MEDIA.TABLET} {
     grid-template-columns: 1fr;
+    background-color: ${(props) => props.theme.colors.primaryDark};
 
     img {
       display: none;
