@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { ReactComponent as Dala } from "@assets/dalahast.svg";
 import Link from "next/link";
+import { MEDIA } from "@constants/layout";
 
-export const HeaderContainer = styled.div`
+export const HeaderContainer = styled.header`
   position: absolute;
   top: 0;
   left: 0;
@@ -15,11 +16,65 @@ export const HeaderContainer = styled.div`
   gap: 16px;
 `;
 
-export const HeaderLinksContainer = styled.div`
+export const HeaderLinksContainer = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
+`;
+
+export const BurgerMenuBtn = styled.button`
+  display: none;
+
+  @media ${MEDIA.TABLET} {
+    display: block;
+  }
+`;
+
+export const CloseBtn = styled.button<{
+  isOpen: boolean;
+}>`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+
+  svg {
+    path {
+      fill: ${(props) => props.theme.colors.secondary};
+    }
+  }
+`;
+
+export const HeaderLinksList = styled.ul<{
+  isOpen: boolean;
+}>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  @media ${MEDIA.TABLET} {
+    position: fixed;
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    left: 0;
+    top: 0;
+    flex-direction: column;
+    background-color: ${(props) => props.theme.colors.primary};
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    scroll-behavior: none;
+
+    a {
+      color: ${(props) => props.theme.colors.secondary};
+    }
+  }
+`;
+
+export const HeaderLinksListItem = styled.li`
+  list-style: none;
 `;
 
 export const HeaderLink = styled(Link)`

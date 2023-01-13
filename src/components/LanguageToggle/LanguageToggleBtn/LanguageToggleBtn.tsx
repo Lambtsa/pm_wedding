@@ -3,6 +3,8 @@ import { useLanguage } from "@context/LanguageContext";
 import {
   ButtonHTMLAttributes,
   DetailedHTMLProps,
+  Dispatch,
+  SetStateAction,
   useCallback,
   useMemo,
 } from "react";
@@ -19,10 +21,12 @@ interface LanguageToggleBtnProps
     HTMLButtonElement
   > {
   locale: LocaleType;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const LanguageToggleBtn = ({
   locale,
+  setIsOpen,
 }: LanguageToggleBtnProps): JSX.Element => {
   const { locale: currentLocale, setLocale } = useLanguage();
 
@@ -42,13 +46,13 @@ export const LanguageToggleBtn = ({
 
   const handleOnClick = useCallback(
     (id: LocaleType) => {
-      console.log({ currentLocale, locale, id });
+      setIsOpen(false);
       if (currentLocale === locale) {
         return;
       }
       setLocale(id);
     },
-    [currentLocale, locale, setLocale]
+    [currentLocale, locale, setIsOpen, setLocale]
   );
 
   return (

@@ -2,6 +2,7 @@ import { Map } from "@components/Map";
 import {
   LocalisationContainer,
   LocalisationInnerContainer,
+  LocalisationWrapper,
   SmallSubtitle,
   SmallTitle,
   Subtitle,
@@ -12,31 +13,35 @@ import {
 export const Localisation = (): JSX.Element => {
   return (
     <LocalisationContainer>
-      <Title id="localisation">Localisation</Title>
-      <Subtitle>Les Genévriers, La Plaine</Subtitle>
-      <LocalisationInnerContainer>
-        <Map />
-        <TextContainer>
-          <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
-          <SmallSubtitle>
-            {
-              "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
-            }
-          </SmallSubtitle>
-          <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
-          <SmallSubtitle>
-            {
-              "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
-            }
-          </SmallSubtitle>
-          <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
-          <SmallSubtitle>
-            {
-              "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
-            }
-          </SmallSubtitle>
-        </TextContainer>
-      </LocalisationInnerContainer>
+      <LocalisationWrapper id="localisation">
+        <div>
+          <Title>Localisation</Title>
+          <Subtitle>Les Genévriers, La Plaine</Subtitle>
+        </div>
+        <LocalisationInnerContainer>
+          <Map />
+          <TextContainer>
+            <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
+            <SmallSubtitle>
+              {
+                "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
+              }
+            </SmallSubtitle>
+            <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
+            <SmallSubtitle>
+              {
+                "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
+              }
+            </SmallSubtitle>
+            <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
+            <SmallSubtitle>
+              {
+                "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
+              }
+            </SmallSubtitle>
+          </TextContainer>
+        </LocalisationInnerContainer>
+      </LocalisationWrapper>
     </LocalisationContainer>
   );
 };

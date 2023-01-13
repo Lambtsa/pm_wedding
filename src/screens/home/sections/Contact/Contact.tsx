@@ -3,6 +3,7 @@ import {
   ActivitiesTitleContainer,
   ContactContainer,
   ContactFormContainer,
+  ContactInnerContainer,
   Subtitle,
   Title,
 } from "./Contact.styles";
@@ -103,34 +104,36 @@ export const Contact = (): JSX.Element => {
 
   return (
     <ContactContainer>
-      <ActivitiesTitleContainer id="contact">
-        <Title>{t({ id: "contact.title" })}</Title>
-        <Subtitle>{t({ id: "contact.subtitle" })}</Subtitle>
-      </ActivitiesTitleContainer>
-      <ContactFormContainer onSubmit={onSubmit}>
-        <InputText
-          type="text"
-          control={control}
-          name="name"
-          error={formErrors.name}
-          placeholder={t({ id: "contact.form.firstName" })}
-        />
-        <InputText
-          type="text"
-          control={control}
-          name="email"
-          error={formErrors.email}
-          placeholder={t({ id: "contact.form.email" })}
-        />
-        <InputText
-          type="text"
-          control={control}
-          name="message"
-          error={formErrors.message}
-          placeholder={t({ id: "contact.form.message" })}
-        />
-        <Button text={t({ id: "contact.form.submit" })} />
-      </ContactFormContainer>
+      <ContactInnerContainer id="contact">
+        <ActivitiesTitleContainer>
+          <Title>{t({ id: "contact.title" })}</Title>
+          <Subtitle>{t({ id: "contact.subtitle" })}</Subtitle>
+        </ActivitiesTitleContainer>
+        <ContactFormContainer onSubmit={onSubmit}>
+          <InputText
+            type="text"
+            control={control}
+            name="name"
+            error={formErrors.name}
+            placeholder={t({ id: "contact.form.firstName" })}
+          />
+          <InputText
+            type="text"
+            control={control}
+            name="email"
+            error={formErrors.email}
+            placeholder={t({ id: "contact.form.email" })}
+          />
+          <InputText
+            type="text"
+            control={control}
+            name="message"
+            error={formErrors.message}
+            placeholder={t({ id: "contact.form.message" })}
+          />
+          <Button text={t({ id: "contact.form.submit" })} />
+        </ContactFormContainer>
+      </ContactInnerContainer>
     </ContactContainer>
   );
 };

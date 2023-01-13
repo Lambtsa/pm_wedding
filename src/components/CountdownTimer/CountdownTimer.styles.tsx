@@ -1,11 +1,23 @@
-import { MEDIA } from "@constants/layout";
+import { CONTAINER, MEDIA } from "@constants/layout";
 import styled from "styled-components";
 
 export const CountdownTimerContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: 150px;
   justify-content: center;
   align-items: center;
   gap: 16px;
+
+  @media ${MEDIA.TABLET} {
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: 100px;
+  }
+
+  @media ${MEDIA.MOBILE} {
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: 80px;
+  }
 `;
 
 export const TimerContainer = styled.div`
@@ -13,9 +25,20 @@ export const TimerContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   width: 150px;
   height: 150px;
   background-color: ${(props) => props.theme.colors.primary10};
+
+  @media ${MEDIA.TABLET} {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media ${MEDIA.MOBILE} {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const TimerSubtitle = styled.p`
@@ -25,6 +48,11 @@ export const TimerSubtitle = styled.p`
   font-size: 16px;
   line-height: 16px;
   font-style: italic;
+
+  @media screen and (max-width: ${CONTAINER.TABLET}px) {
+    font-size: 12px;
+    line-height: 12px;
+  }
 `;
 
 export const TimerTitle = styled.h3`
@@ -35,7 +63,7 @@ export const TimerTitle = styled.h3`
   line-height: 36px;
   font-family: ${(props) => props.theme.fonts.parisienne};
 
-  @media ${MEDIA.MOBILE} {
+  @media ${MEDIA.TABLET} {
     font-size: 24px;
     line-height: 24px;
   }

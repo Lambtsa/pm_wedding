@@ -8,7 +8,7 @@ export const SplitScreenContainerTop = styled.section`
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-content: center;
-  height: 100vh;
+  min-height: 100vh;
   z-index: 100;
   overflow: hidden;
   margin-top: -150px;
@@ -18,6 +18,14 @@ export const SplitScreenContainerTop = styled.section`
   img {
     margin-top: -150px;
   }
+
+  @media ${MEDIA.TABLET} {
+    grid-template-columns: 1fr;
+
+    img {
+      display: none;
+    }
+  }
 `;
 
 export const ActivitiesContainer = styled.div`
@@ -26,7 +34,7 @@ export const ActivitiesContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 16px;
-  padding: 16px;
+  padding: 150px 16px;
 `;
 
 export const ActivitiesTitleContainer = styled.div``;
@@ -96,6 +104,11 @@ export const ActivityBtn = styled.button<{
     background-color: ${(props) => props.theme.colors.secondary20};
     box-shadow: 0 0 10px 10px ${(props) => props.theme.colors.primaryDark};
   }
+
+  @media ${MEDIA.MOBILE} {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 export const ActivitiesFormContainer = styled.form`
@@ -118,13 +131,21 @@ export const SplitScreenContainerBottom = styled.section`
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-content: center;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 150px), 0% 100%);
 
   img {
     margin-top: -150px;
+  }
+
+  @media ${MEDIA.TABLET} {
+    grid-template-columns: 1fr;
+
+    img {
+      display: none;
+    }
   }
 `;
 

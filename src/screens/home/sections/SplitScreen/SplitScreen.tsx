@@ -172,7 +172,6 @@ export const SplitScreen = (): JSX.Element => {
 
   const handleOnChange = useCallback(
     (id: ActivityType) => {
-      console.log({ id });
       if (selectedActivities.includes(id)) {
         const filteredActivities = selectedActivities.filter(
           (activity) => activity !== id
@@ -188,7 +187,7 @@ export const SplitScreen = (): JSX.Element => {
   const hasActivities = !!activities.length;
   return (
     <>
-      <SplitScreenContainerTop id="activites">
+      <SplitScreenContainerTop id="activities">
         <Img alt="" src={Couple} />
         <ActivitiesContainer>
           <ActivitiesTitleContainer>

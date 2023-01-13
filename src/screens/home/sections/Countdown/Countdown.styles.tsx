@@ -9,7 +9,7 @@ export const CountdownContainer = styled.section`
   align-items: center;
   background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   color: ${(props) => props.theme.colors.white};
   /* TODO: figure out mobile */
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 150px), 0 100%);
@@ -21,7 +21,7 @@ export const InnerContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 16px;
+  padding: 150px 16px;
   max-width: ${CONTAINER.TABLET}px;
 `;
 

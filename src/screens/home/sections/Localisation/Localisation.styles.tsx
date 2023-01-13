@@ -9,9 +9,16 @@ export const LocalisationContainer = styled.section`
   background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
   margin-top: -150px;
-  height: calc(100vh + 300px);
+  min-height: calc(100vh + 300px);
   color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+`;
+
+export const LocalisationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 150px 16px;
 `;
 
 export const LocalisationInnerContainer = styled.div`
@@ -21,10 +28,13 @@ export const LocalisationInnerContainer = styled.div`
   align-content: center;
   gap: 16px;
   width: 100%;
-  padding: 16px;
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.secondary};
   max-width: ${CONTAINER.PC}px;
+
+  @media ${MEDIA.TABLET} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const TextContainer = styled.div`

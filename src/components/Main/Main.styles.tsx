@@ -5,5 +5,5 @@ export const MainSection = styled.main`
   overflow-x: hidden;
   min-width: 100%;
   max-width: 100vw;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.secondary};
 `;
