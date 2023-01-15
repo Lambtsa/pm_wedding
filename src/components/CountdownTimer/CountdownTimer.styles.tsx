@@ -3,20 +3,15 @@ import styled from "styled-components";
 
 export const CountdownTimerContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 150px);
-  grid-template-rows: 150px;
+  grid-template-columns: repeat(4, minmax(60px, 150px));
+  grid-template-rows: minmax(60px, 150px);
   justify-content: center;
   align-items: center;
   gap: 16px;
-
-  @media ${MEDIA.TABLET} {
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: 100px;
-  }
+  width: 100%;
 
   @media ${MEDIA.MOBILE} {
-    grid-template-columns: repeat(4, 80px);
-    grid-template-rows: 80px;
+    gap: 8px;
   }
 `;
 
@@ -26,18 +21,20 @@ export const TimerContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 150px;
-  height: 150px;
+  padding: 8px;
+  aspect-ratio: 1/1;
   background-color: ${(props) => props.theme.colors.primary10};
 
-  @media ${MEDIA.TABLET} {
-    width: 100px;
-    height: 100px;
-  }
+  @supports not (aspect-ratio: 1/1) {
+    height: 150px;
 
-  @media ${MEDIA.MOBILE} {
-    width: 80px;
-    height: 80px;
+    @media ${MEDIA.TABLET} {
+      height: 100px;
+    }
+
+    @media ${MEDIA.MOBILE} {
+      height: 80px;
+    }
   }
 `;
 
@@ -52,6 +49,11 @@ export const TimerSubtitle = styled.p`
   @media screen and (max-width: ${CONTAINER.TABLET}px) {
     font-size: 12px;
     line-height: 12px;
+  }
+
+  @media screen and (max-width: ${CONTAINER.TABLET}px) {
+    font-size: 10px;
+    line-height: 10px;
   }
 `;
 

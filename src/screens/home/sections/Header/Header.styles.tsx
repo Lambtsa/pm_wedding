@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Dala } from "@assets/dalahast.svg";
+import { ReactComponent as Dala } from "@assets/dalahast45.svg";
 import Link from "next/link";
 import { MEDIA } from "@constants/layout";
 

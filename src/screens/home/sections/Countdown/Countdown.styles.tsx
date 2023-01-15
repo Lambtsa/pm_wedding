@@ -23,6 +23,7 @@ export const InnerContainer = styled.div`
   gap: 16px;
   padding: 150px 16px;
   max-width: ${CONTAINER.TABLET}px;
+  width: 100%;
 `;
 
 export const Title = styled.h2`
