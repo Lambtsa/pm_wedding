@@ -14,8 +14,10 @@ export const Jumbotron = (): JSX.Element => {
       <JumbotronInnerContainer>
         <DecorationIcon />
         <div>
-          <Title>{t({ id: "jumbotron.title" })}</Title>
-          <Subtitle>{t({ id: "jumbotron.subtitle" })}</Subtitle>
+          <Title data-test="jumbo-title">{t({ id: "jumbotron.title" })}</Title>
+          <Subtitle data-test="jumbo-subtitle">
+            {t({ id: "jumbotron.subtitle" })}
+          </Subtitle>
         </div>
         <DecorationIcon />
       </JumbotronInnerContainer>

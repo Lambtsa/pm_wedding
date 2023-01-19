@@ -41,6 +41,7 @@ export default class MyDocument extends Document {
 
   public render(): JSX.Element {
     return (
+      /* TODO: Make this dynamic */
       <Html lang="en">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
