@@ -28,6 +28,11 @@ export const ContactInnerContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 48px 16px;
+
+  @media ${MEDIA.MOBILE} {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
 `;
 
 export const ActivitiesTitleContainer = styled.div`
@@ -86,8 +91,8 @@ export const SmallTitle = styled.h2`
   font-family: ${(props) => props.theme.fonts.montserrat};
 
   @media ${MEDIA.MOBILE} {
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 24px;
   }
 `;
 
