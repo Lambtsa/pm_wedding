@@ -1,9 +1,12 @@
 import { Map } from "@components/Map";
+import { useTranslation } from "@hooks/useTranslation";
 import {
   LocalisationContainer,
   LocalisationInnerContainer,
   LocalisationWrapper,
   SmallSubtitle,
+  SmallSubtitleList,
+  SmallSubtitleWrapper,
   SmallTitle,
   Subtitle,
   TextContainer,
@@ -11,34 +14,42 @@ import {
 } from "./Localisation.styles";
 
 export const Localisation = (): JSX.Element => {
+  const { t } = useTranslation();
   return (
     <LocalisationContainer>
       <LocalisationWrapper id="localisation">
         <div>
-          <Title>Localisation</Title>
-          <Subtitle>Les Genévriers, La Plaine</Subtitle>
+          <Title>{t({ id: "location.title" })}</Title>
+          <Subtitle>{t({ id: "location.subtitle" })}</Subtitle>
         </div>
         <LocalisationInnerContainer>
           <Map />
           <TextContainer>
-            <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
+            <SmallTitle>{t({ id: "location.where.title" })}</SmallTitle>
             <SmallSubtitle>
-              {
-                "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
-              }
+              {t({ id: "location.where.subtitle" })}
             </SmallSubtitle>
-            <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
-            <SmallSubtitle>
-              {
-                "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
-              }
-            </SmallSubtitle>
-            <SmallTitle>Les Genévriers, La Plaine</SmallTitle>
-            <SmallSubtitle>
-              {
-                "Lorem ipsum dolor sit amet consectetur. Est risus tellus vestibulum arcu rhoncus neque tortor."
-              }
-            </SmallSubtitle>
+            <SmallTitle>{t({ id: "location.airport.title" })}</SmallTitle>
+            <SmallSubtitleWrapper>
+              <SmallSubtitleList>
+                {t({ id: "location.airport.first" })}
+              </SmallSubtitleList>
+              <SmallSubtitleList>
+                {t({ id: "location.airport.second" })}
+              </SmallSubtitleList>
+              <SmallSubtitleList>
+                {t({ id: "location.airport.third" })}
+              </SmallSubtitleList>
+            </SmallSubtitleWrapper>
+            <SmallTitle>{t({ id: "location.station.title" })}</SmallTitle>
+            <SmallSubtitleWrapper>
+              <SmallSubtitleList>
+                {t({ id: "location.station.first" })}
+              </SmallSubtitleList>
+              <SmallSubtitleList>
+                {t({ id: "location.station.second" })}
+              </SmallSubtitleList>
+            </SmallSubtitleWrapper>
           </TextContainer>
         </LocalisationInnerContainer>
       </LocalisationWrapper>

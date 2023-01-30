@@ -7,12 +7,12 @@ export const CountdownContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.secondary};
+  background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
   min-height: 100vh;
   color: ${(props) => props.theme.colors.white};
   /* TODO: figure out mobile */
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 150px), 0 100%);
+  clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
 `;
 
 export const InnerContainer = styled.div`
@@ -26,7 +26,7 @@ export const InnerContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secondary};
   font-weight: ${(props) => props.theme.fontWeights.bold};
   text-align: center;
   font-size: 48px;
@@ -40,7 +40,7 @@ export const Title = styled.h2`
 `;
 
 export const Subtitle = styled.p`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secondary};
   font-weight: ${(props) => props.theme.fontWeights.regular};
   text-align: center;
   font-size: 16px;

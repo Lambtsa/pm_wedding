@@ -6,24 +6,16 @@ import { SplitScreen } from "@screens/home/sections/SplitScreen";
 import { Localisation } from "@screens/home/sections/Localisation";
 import { Contact } from "@screens/home/sections/Contact";
 import { Footer } from "@screens/home/sections/Footer";
-import { useEffect } from "react";
+import { News } from "./sections/News";
 
 export const HomeScreen = (): JSX.Element => {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("http://localhost:8080/ping");
-      const data = await response.json();
-      console.log({ data });
-    };
-
-    fetchData();
-  }, []);
   return (
     <Main>
       {/* TODO: Move sections into subfolder of home */}
       <Header />
       <Jumbotron />
       <Countdown />
+      <News />
       <SplitScreen />
       <Localisation />
       <Contact />

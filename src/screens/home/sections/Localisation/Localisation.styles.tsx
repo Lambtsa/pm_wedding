@@ -85,5 +85,25 @@ export const SmallSubtitle = styled.p`
   font-size: 16px;
   line-height: 16px;
   font-style: italic;
-  margin-bottom: 16px;
+  margin: 16px 0;
+`;
+
+export const SmallSubtitleWrapper = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 16px 0;
+  gap: 16px;
+`;
+
+export const SmallSubtitleList = styled.li`
+  color: ${(props) => props.theme.colors.primary70};
+  font-weight: ${(props) => props.theme.fontWeights.regular};
+  list-style: circle;
+  text-align: left;
+  font-size: 16px;
+  line-height: 20px;
+  font-style: italic;
+  margin-left: 16px;
 `;

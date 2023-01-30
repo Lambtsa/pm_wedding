@@ -26,9 +26,10 @@ export const TimerContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  border-radius: 10px;
   width: 150px;
   height: 150px;
-  background-color: ${(props) => props.theme.colors.primary10};
+  background-color: ${(props) => props.theme.colors.secondary20};
 
   @media ${MEDIA.TABLET} {
     width: 100px;
@@ -42,7 +43,7 @@ export const TimerContainer = styled.div`
 `;
 
 export const TimerSubtitle = styled.p`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secondary};
   font-weight: ${(props) => props.theme.fontWeights.regular};
   text-align: center;
   font-size: 16px;
@@ -56,7 +57,7 @@ export const TimerSubtitle = styled.p`
 `;
 
 export const TimerTitle = styled.h3`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secondary};
   font-weight: ${(props) => props.theme.fontWeights.bold};
   text-align: center;
   font-size: 36px;
@@ -70,7 +71,7 @@ export const TimerTitle = styled.h3`
 `;
 
 export const TimerMessage = styled.p`
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.secondary};
   font-weight: ${(props) => props.theme.fontWeights.regular};
   text-align: center;
   font-size: 24px;
