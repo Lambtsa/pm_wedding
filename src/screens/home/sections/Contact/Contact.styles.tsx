@@ -6,9 +6,8 @@ export const ContactContainer = styled.section`
   background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
   margin-top: -150px;
-  min-height: 100vh;
   color: ${(props) => props.theme.colors.white};
-  clip-path: polygon(0% 150px, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0% 100px, 100% 0, 100% 100%, 0 100%);
 `;
 
 export const ContactOuterContainer = styled.div`
@@ -18,7 +17,8 @@ export const ContactOuterContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 16px;
-  padding-top: 150px;
+  padding-top: 200px;
+  padding-bottom: 100px;
 `;
 export const ContactInnerContainer = styled.div`
   display: grid;
@@ -51,11 +51,6 @@ export const Title = styled.h2`
   font-size: 48px;
   line-height: 48px;
   font-family: ${(props) => props.theme.fonts.parisienne};
-
-  @media ${MEDIA.MOBILE} {
-    font-size: 36px;
-    line-height: 36px;
-  }
 `;
 
 export const Subtitle = styled.p`

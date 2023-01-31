@@ -17,6 +17,7 @@ export const HeaderContainer = styled.header`
 `;
 
 export const HeaderLinksContainer = styled.nav`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,19 +1,15 @@
-import { CONTAINER, MEDIA } from "@constants/layout";
+import { CONTAINER } from "@constants/layout";
 import styled from "styled-components";
 import { ReactComponent as Dala } from "@assets/dalahast.svg";
 
 export const NewsContainer = styled.section`
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: -150px;
   background-color: ${(props) => props.theme.colors.secondary};
-  width: 100%;
-  min-height: 100vh;
-  /* min-height: calc(100vh + 300px); */
+  min-height: calc(100vh - 300px);
   color: ${(props) => props.theme.colors.white};
   /* TODO: figure out mobile */
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 150px), 0 100%);
+  clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
 `;
 
 export const InnerContainer = styled.div`
@@ -22,9 +18,10 @@ export const InnerContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 150px 16px;
-  padding-bottom: 300px;
+  padding: 200px 16px;
+  height: calc(100% + 300px);
   max-width: ${CONTAINER.TABLET}px;
+  margin: 0 auto;
 `;
 
 export const Title = styled.h2`
@@ -34,11 +31,6 @@ export const Title = styled.h2`
   font-size: 48px;
   line-height: 48px;
   font-family: ${(props) => props.theme.fonts.parisienne};
-
-  @media ${MEDIA.MOBILE} {
-    font-size: 36px;
-    line-height: 36px;
-  }
 `;
 
 export const Subtitle = styled.p`
@@ -66,11 +58,13 @@ export const NewsArticleContainer = styled.div`
   gap: 16px;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 
 export const ArticleContainer = styled.div`
   display: flex;
   gap: 16px;
+  width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   padding: 16px;

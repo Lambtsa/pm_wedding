@@ -51,11 +51,6 @@ export const Title = styled.h2`
   font-size: 48px;
   line-height: 48px;
   font-family: ${(props) => props.theme.fonts.parisienne};
-
-  @media ${MEDIA.MOBILE} {
-    font-size: 36px;
-    line-height: 36px;
-  }
 `;
 
 export const Subtitle = styled.p`
@@ -157,6 +152,7 @@ export const SplitScreenContainerBottom = styled.section`
   @media ${MEDIA.TABLET} {
     grid-template-columns: 1fr;
     background-color: ${(props) => props.theme.colors.primaryDark};
+    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 50px), 0% 100%);
 
     img {
       display: none;
@@ -173,7 +169,7 @@ export const Img = styled(Image)`
 
 export const Dalahast = styled(Dala)`
   position: absolute;
-  bottom: 16px;
+  bottom: 32px;
   left: 16px;
   path {
     stroke: ${(props) => props.theme.colors.secondary};

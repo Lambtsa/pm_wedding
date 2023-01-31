@@ -9,10 +9,13 @@ export const CountdownContainer = styled.section`
   align-items: center;
   background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
-  min-height: 100vh;
   color: ${(props) => props.theme.colors.white};
   /* TODO: figure out mobile */
   clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+
+  @media ${MEDIA.TABLET} {
+    clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+  }
 `;
 
 export const InnerContainer = styled.div`
@@ -21,7 +24,7 @@ export const InnerContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 150px 16px;
+  padding: 300px 16px;
   max-width: ${CONTAINER.TABLET}px;
 `;
 
@@ -32,11 +35,6 @@ export const Title = styled.h2`
   font-size: 48px;
   line-height: 48px;
   font-family: ${(props) => props.theme.fonts.parisienne};
-
-  @media ${MEDIA.MOBILE} {
-    font-size: 36px;
-    line-height: 36px;
-  }
 `;
 
 export const Subtitle = styled.p`

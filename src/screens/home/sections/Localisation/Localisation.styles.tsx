@@ -12,13 +12,22 @@ export const LocalisationContainer = styled.section`
   min-height: calc(100vh + 300px);
   color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+
+  @media ${MEDIA.TABLET} {
+    clip-path: polygon(
+      0 150px,
+      100% 0,
+      100% calc(100% - 150px),
+      0 calc(100% - 50px)
+    );
+  }
 `;
 
 export const LocalisationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 150px 16px;
+  padding: 200px 16px;
 `;
 
 export const LocalisationInnerContainer = styled.div`
@@ -52,11 +61,6 @@ export const Title = styled.h2`
   font-size: 48px;
   line-height: 48px;
   font-family: ${(props) => props.theme.fonts.parisienne};
-
-  @media ${MEDIA.MOBILE} {
-    font-size: 36px;
-    line-height: 36px;
-  }
 `;
 
 export const Subtitle = styled.p`
@@ -76,6 +80,10 @@ export const SmallTitle = styled.h3`
   text-align: left;
   font-size: 24px;
   line-height: 24px;
+
+  @media ${MEDIA.TABLET} {
+    text-align: center;
+  }
 `;
 
 export const SmallSubtitle = styled.p`
@@ -86,6 +94,10 @@ export const SmallSubtitle = styled.p`
   line-height: 16px;
   font-style: italic;
   margin: 16px 0;
+
+  @media ${MEDIA.TABLET} {
+    text-align: center;
+  }
 `;
 
 export const SmallSubtitleWrapper = styled.ul`
@@ -100,10 +112,14 @@ export const SmallSubtitleWrapper = styled.ul`
 export const SmallSubtitleList = styled.li`
   color: ${(props) => props.theme.colors.primary70};
   font-weight: ${(props) => props.theme.fontWeights.regular};
-  list-style: circle;
   text-align: left;
   font-size: 16px;
   line-height: 20px;
-  font-style: italic;
   margin-left: 16px;
+  width: 100%;
+
+  @media ${MEDIA.TABLET} {
+    text-align: center;
+    margin-left: 0;
+  }
 `;

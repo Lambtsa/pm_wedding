@@ -1,5 +1,5 @@
 import { LOCALES } from "@constants/locales";
-import React, {
+import {
   createContext,
   useState,
   ReactNode,
