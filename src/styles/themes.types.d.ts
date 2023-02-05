@@ -1,6 +1,10 @@
 import "styled-components";
 
 interface Colors {
+  englishVermillion: string;
+  greenPigment: string;
+  pacificBlue: string;
+  persianOrange: string;
   primary: string;
   primary10: string;
   primary70: string;

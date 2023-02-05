@@ -18,8 +18,7 @@ export const Map = (): JSX.Element => {
 
     const mapboxMap = new mapboxgl.Map({
       container: node,
-      accessToken:
-        "pk.eyJ1IjoibGFtYnRzYSIsImEiOiJjbGNzdmY2cXEwajRiM29wMWJhZ283Nm1pIn0.awIT6WY3uOm0LKflyi4EQA",
+      accessToken: process.env.MAPBOX_TOKEN,
       style: "mapbox://styles/mapbox/streets-v11",
       center: [7.144527186802712, 48.42183154224175],
       zoom: 15,

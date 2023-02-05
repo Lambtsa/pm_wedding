@@ -13,7 +13,7 @@ import {
   HeaderLinksListItem,
 } from "./Header.styles";
 import { ReactComponent as BurgerMenu } from "@assets/burger.svg";
-import { ReactComponent as CloseMenu } from "@assets/close.svg";
+import { ReactComponent as CloseMenu } from "@assets/close24.svg";
 import { useCallback, useMemo, useState } from "react";
 import { v4 as uuid } from "uuid";
 
@@ -35,8 +35,8 @@ export const Header = (): JSX.Element => {
     () => [
       {
         id: uuid(),
-        uri: "#",
-        text: "header.ourStory",
+        uri: "#when",
+        text: "header.when",
       },
       {
         id: uuid(),

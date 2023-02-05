@@ -1,4 +1,4 @@
-import URL from "@constants/url";
+import { config } from "config";
 import { routes } from "./routes";
 export interface MetaData {
   title: FormatjsIntl.Message["ids"];
@@ -12,9 +12,7 @@ interface Pages {
 }
 
 const buildUrl = (path: string): string => {
-  return process.env.NODE_ENV === "production"
-    ? `${URL.PROD}${path}`
-    : `${URL.DEV}${path}`;
+  return `${config.frontendUrl}${path}`;
 };
 
 export const pageData: Pages = {

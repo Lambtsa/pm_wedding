@@ -23,16 +23,29 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { InputText } from "@components/InputText";
 import { useTranslation } from "@hooks/useTranslation";
 import { useLanguage } from "@context/LanguageContext";
+import { useToast } from "@context/ToastContext";
+import { config } from "config";
 
-type ActivityType =
-  | "horse"
-  | "boules"
-  | "climbing"
-  | "volleyball"
-  | "hiking"
-  | "paragliding"
-  | "yoga"
-  | "spa";
+// type ActivityType =
+//   | "horse"
+//   | "boules"
+//   | "climbing"
+//   | "volleyball"
+//   | "hiking"
+//   | "paragliding"
+//   | "yoga"
+//   | "spa";
+
+enum ActivityType {
+  Horse = "horse",
+  Boules = "boules",
+  Climbing = "climbing",
+  Volleyball = "volleyball",
+  Hiking = "hiking",
+  Paragliding = "paragliding",
+  Yoga = "yoga",
+  Spa = "spa",
+}
 
 interface Activity {
   id: ActivityType;
@@ -43,6 +56,7 @@ interface Activity {
 export const SplitScreen = (): JSX.Element => {
   const { t } = useTranslation();
   const { locale } = useLanguage();
+  const { addToast } = useToast();
   /* ################################################## */
   /* State */
   /* ################################################## */
@@ -107,42 +121,42 @@ export const SplitScreen = (): JSX.Element => {
   const activities: Activity[] = useMemo(
     () => [
       {
-        id: "horse",
+        id: ActivityType.Horse,
         icon: "🐎",
         title: "activities.horse",
       },
       {
-        id: "boules",
+        id: ActivityType.Boules,
         icon: "👴🏻",
         title: "activities.boules",
       },
       {
-        id: "climbing",
+        id: ActivityType.Climbing,
         icon: "🧗🏻",
         title: "activities.climbing",
       },
       {
-        id: "volleyball",
+        id: ActivityType.Volleyball,
         icon: "🏐",
         title: "activities.volleyball",
       },
       {
-        id: "hiking",
+        id: ActivityType.Hiking,
         icon: "🥾",
         title: "activities.hiking",
       },
       {
-        id: "paragliding",
+        id: ActivityType.Paragliding,
         icon: "🪂",
         title: "activities.paragliding",
       },
       {
-        id: "yoga",
+        id: ActivityType.Yoga,
         icon: "🧘🏼‍♂️",
         title: "activities.yoga",
       },
       {
-        id: "spa",
+        id: ActivityType.Spa,
         icon: "🧖",
         title: "activities.spa",
       },
@@ -160,14 +174,67 @@ export const SplitScreen = (): JSX.Element => {
         return;
       }
 
-      setIsLoading(true);
+      if (!selectedActivities.length) {
+        addToast({
+          type: "warning",
+          title: "activities.error.noActivities.title",
+          message: "activities.error.noActivities.message",
+        });
+        return;
+      }
 
-      handleSubmit(async (formFields) => {
-        console.log({ formFields });
-        setIsLoading(false);
-      })();
+      handleSubmit(
+        async (formFields) => {
+          setIsLoading(true);
+          const response = await fetch(`${config.backendUrl}/api/email`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: formFields.name,
+              email: formFields.email,
+              activities: selectedActivities,
+            }),
+          });
+
+          if (!response.ok) {
+            addToast({
+              type: "danger",
+              title: "activities.error.serverError.title",
+              message: "activities.error.serverError.message",
+            });
+          } else {
+            addToast({
+              type: "success",
+              title: "activities.error.success.title",
+              message: "activities.error.success.message",
+            });
+            /* Reset the forms after valid response */
+            reset(defaultValues, { keepDefaultValues: true });
+            setSelectedActivities([]);
+          }
+          setIsLoading(false);
+        },
+        (err) => {
+          console.log({ err });
+          addToast({
+            type: "danger",
+            title: "activities.error.serverError.title",
+            message: "activities.error.serverError.message",
+          });
+          setIsLoading(false);
+        }
+      )();
     },
-    [handleSubmit, isLoading]
+    [
+      addToast,
+      defaultValues,
+      handleSubmit,
+      isLoading,
+      reset,
+      selectedActivities,
+    ]
   );
 
   const handleOnChange = useCallback(
@@ -187,9 +254,9 @@ export const SplitScreen = (): JSX.Element => {
   const hasActivities = !!activities.length;
   return (
     <>
-      <SplitScreenContainerTop id="activities">
+      <SplitScreenContainerTop>
         <Img alt="" src={Couple} />
-        <ActivitiesContainer>
+        <ActivitiesContainer id="activities">
           <ActivitiesTitleContainer>
             <Title>{t({ id: "activities.selectTitle" })}</Title>
             <Subtitle>{t({ id: "activities.selectSubtitle" })}</Subtitle>
@@ -225,7 +292,7 @@ export const SplitScreen = (): JSX.Element => {
               placeholder={t({ id: "activities.form.name.placeholder" })}
             />
             <InputText
-              type="text"
+              type="email"
               control={control}
               name="email"
               error={formErrors.email}

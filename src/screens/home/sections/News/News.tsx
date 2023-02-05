@@ -1,6 +1,7 @@
 import { useLanguage } from "@context/LanguageContext";
 import { formatDate } from "@helpers/formatDate";
 import { useTranslation } from "@hooks/useTranslation";
+import { config } from "config";
 import { useEffect, useState } from "react";
 import {
   NewsContainer,
@@ -25,7 +26,7 @@ interface NewsItem {
   created_at: string;
 }
 
-export const News = (): JSX.Element => {
+export const News = (): JSX.Element | null => {
   const { t } = useTranslation();
   const { locale } = useLanguage();
   /* ######################################## */
@@ -35,9 +36,8 @@ export const News = (): JSX.Element => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:80/api/news");
+      const response = await fetch(`${config.backendUrl}/api/news`);
       const data = await response.json();
-      console.log(data);
       setNewsItems(data);
     };
 
@@ -48,7 +48,7 @@ export const News = (): JSX.Element => {
     if (typeof window === "undefined") {
       return;
     }
-    const webSocket = new WebSocket("ws://localhost:80");
+    const webSocket = new WebSocket(config.websocket);
 
     webSocket.onmessage = (event) => {
       const data = JSON.parse(event.data);
@@ -63,7 +63,9 @@ export const News = (): JSX.Element => {
     };
   }, []);
 
-  const hasItems = !!newsItems.length;
+  if (!newsItems.length) {
+    return null;
+  }
 
   return (
     <>
@@ -72,21 +74,20 @@ export const News = (): JSX.Element => {
           <Title>{t({ id: "news.title" })}</Title>
           <Subtitle>{t({ id: "news.subtitle" })}</Subtitle>
           <NewsArticleContainer>
-            {hasItems &&
-              newsItems.map((item) => (
-                <ArticleContainer key={item.id}>
-                  <ArticleEmoji>{item.emoji}</ArticleEmoji>
-                  <ArticleInnerContainer>
-                    <div>
-                      <ArticleTitle>{item.title}</ArticleTitle>
-                      <ArticleDate>
-                        {formatDate(item.created_at, locale)}
-                      </ArticleDate>
-                    </div>
-                    <ArticleSubtitle>{item.description}</ArticleSubtitle>
-                  </ArticleInnerContainer>
-                </ArticleContainer>
-              ))}
+            {newsItems.map((item) => (
+              <ArticleContainer key={item.id}>
+                <ArticleEmoji>{item.emoji}</ArticleEmoji>
+                <ArticleInnerContainer>
+                  <div>
+                    <ArticleTitle>{item.title}</ArticleTitle>
+                    <ArticleDate>
+                      {formatDate(item.created_at, locale)}
+                    </ArticleDate>
+                  </div>
+                  <ArticleSubtitle>{item.description}</ArticleSubtitle>
+                </ArticleInnerContainer>
+              </ArticleContainer>
+            ))}
           </NewsArticleContainer>
         </InnerContainer>
         <Dalahast />

@@ -1,4 +1,5 @@
 import { CONTAINER, MEDIA } from "@constants/layout";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const LocalisationContainer = styled.section`
@@ -86,7 +87,7 @@ export const SmallTitle = styled.h3`
   }
 `;
 
-export const SmallSubtitle = styled.p`
+export const SmallSubtitleLink = styled(Link)`
   color: ${(props) => props.theme.colors.primary70};
   font-weight: ${(props) => props.theme.fontWeights.regular};
   text-align: left;
@@ -94,9 +95,18 @@ export const SmallSubtitle = styled.p`
   line-height: 16px;
   font-style: italic;
   margin: 16px 0;
+  margin-left: 16px;
 
   @media ${MEDIA.TABLET} {
     text-align: center;
+  }
+
+  /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover */
+  @media (hover: hover) {
+    /* when hover is supported */
+    :hover {
+      text-decoration: underline;
+    }
   }
 `;
 

@@ -9,6 +9,10 @@ module.exports = (phase, { defaultConfig }) => {
     // );
     // Enable <React.StrictMode> in application
     reactStrictMode: true,
+    env: {
+      MAPBOX_TOKEN: process.env.MAPBOX_TOKEN,
+      gaTrackingId: process.env.gaTrackingId,
+    },
 
     // fileExtensions: ["jpg", "jpeg", "png", "gif"],
 

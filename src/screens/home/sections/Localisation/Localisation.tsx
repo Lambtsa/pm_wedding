@@ -4,7 +4,7 @@ import {
   LocalisationContainer,
   LocalisationInnerContainer,
   LocalisationWrapper,
-  SmallSubtitle,
+  SmallSubtitleLink,
   SmallSubtitleList,
   SmallSubtitleWrapper,
   SmallTitle,
@@ -17,8 +17,8 @@ export const Localisation = (): JSX.Element => {
   const { t } = useTranslation();
   return (
     <LocalisationContainer>
-      <LocalisationWrapper id="localisation">
-        <div>
+      <LocalisationWrapper>
+        <div id="localisation">
           <Title>{t({ id: "location.title" })}</Title>
           <Subtitle>{t({ id: "location.subtitle" })}</Subtitle>
         </div>
@@ -26,9 +26,13 @@ export const Localisation = (): JSX.Element => {
           <Map />
           <TextContainer>
             <SmallTitle>{t({ id: "location.where.title" })}</SmallTitle>
-            <SmallSubtitle>
+            <SmallSubtitleLink
+              href={"https://goo.gl/maps/2BT5AkcmRXR7dgx6A"}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t({ id: "location.where.subtitle" })}
-            </SmallSubtitle>
+            </SmallSubtitleLink>
             <SmallTitle>{t({ id: "location.airport.title" })}</SmallTitle>
             <SmallSubtitleWrapper>
               <SmallSubtitleList>

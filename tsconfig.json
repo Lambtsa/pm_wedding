@@ -21,6 +21,7 @@
     "paths": {
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
+      "@config": ["constants/index"],
       "@constants/*": ["constants/*"],
       "@context/*": ["context/*"],
       "@helpers/*": ["helpers/*"],

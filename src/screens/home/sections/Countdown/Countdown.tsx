@@ -13,7 +13,7 @@ export const Countdown = (): JSX.Element => {
   return (
     <>
       <CountdownContainer>
-        <InnerContainer>
+        <InnerContainer id="when">
           <Title>{t({ id: "countdown.date" })}</Title>
           <Subtitle>{t({ id: "countdown.weddingAddress" })}</Subtitle>
           <CountdownTimer />

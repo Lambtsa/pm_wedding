@@ -36,7 +36,6 @@ export const ContactInnerContainer = styled.div`
 `;
 
 export const ActivitiesTitleContainer = styled.div`
-  max-width: ${CONTAINER.MOBILE}px;
   display: flex;
   flex-direction: column;
   gap: 16px;

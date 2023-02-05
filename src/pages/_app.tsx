@@ -3,13 +3,16 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "@styles";
 import { GlobalStyle } from "@styles";
 import { LanguageProvider } from "@context/LanguageContext";
+import { ToastProvider } from "@context/ToastContext";
 
 export default function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <LanguageProvider>
-        <Component {...pageProps} />
+        <ToastProvider>
+          <Component {...pageProps} />
+        </ToastProvider>
       </LanguageProvider>
     </ThemeProvider>
   );

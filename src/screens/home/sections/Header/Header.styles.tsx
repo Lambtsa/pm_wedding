@@ -35,16 +35,20 @@ export const BurgerMenuBtn = styled.button`
 export const CloseBtn = styled.button<{
   isOpen: boolean;
 }>`
+  display: none;
   position: fixed;
   top: 16px;
   right: 16px;
   z-index: 20;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 
   svg {
     path {
       fill: ${(props) => props.theme.colors.secondary};
     }
+  }
+
+  @media ${MEDIA.TABLET} {
+    display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   }
 `;
 
