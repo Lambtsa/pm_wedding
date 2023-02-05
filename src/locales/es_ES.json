@@ -59,6 +59,9 @@
   "location.station.title": "🚂 Gares",
   "location.station.first": "Gare de Strasbourg + comptez 50 min en voiture pour arriver à Plaine",
   "location.station.second": "Gare de Sélestat + comptez 42 min en voiture pour arriver à Plaine",
+  "fourOhFour.title": "404",
+  "fourOhFour.subtitle": "By the beard of Zeus! This page doesn't exist",
+  "fourOhFour.btn": "Return home",
   "news.title": "News",
   "news.subtitle": "It's so damn hot . . . milk was a bad choice!"
 }

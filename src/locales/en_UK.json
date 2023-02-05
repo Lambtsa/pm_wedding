@@ -59,6 +59,9 @@
   "location.station.title": "🚂 Train stations",
   "location.station.first": "Strasbourg station + then a 50min drive to Plaine",
   "location.station.second": "Selestat station + then a 42min drive to Plaine",
+  "fourOhFour.title": "404",
+  "fourOhFour.subtitle": "By the beard of Zeus! This page doesn't exist",
+  "fourOhFour.btn": "Return home",
   "news.title": "News",
   "news.subtitle": "It's so damn hot . . . milk was a bad choice!"
 }

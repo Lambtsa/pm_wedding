@@ -294,7 +294,10 @@ export const SplitScreen = (): JSX.Element => {
               error={formErrors.email}
               placeholder={t({ id: "activities.form.email.placeholder" })}
             />
-            <Button text={t({ id: "activities.form.submit" })} />
+            <Button
+              btnType="primary"
+              text={t({ id: "activities.form.submit" })}
+            />
           </ActivitiesFormContainer>
           <Dalahast />
         </ActivitiesContainer>
