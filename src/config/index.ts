@@ -22,7 +22,7 @@ export const configuration: ConfigType = {
   prod: {
     backendUrl: "https://api.lambtsa.com",
     frontendUrl: "https://lambtsa.com",
-    websocket: "ws://api.lambtsa.com",
+    websocket: "wss://api.lambtsa.com",
   },
 };
 
