@@ -11,6 +11,7 @@ import {
   ActivitiesFormContainer,
   Dalahast,
   ActivityText,
+  ForwardLink,
 } from "./SplitScreen.styles";
 import Couple from "@assets/images/IMG_6151.webp";
 import Family from "@assets/images/IMG_5351.webp";
@@ -273,11 +274,13 @@ export const SplitScreen = (): JSX.Element => {
                   <ActivityText>{t({ id: activity.title })}</ActivityText>
                 </ActivityBtn>
               ))}
-            <Forward />
+            <ForwardLink href={"#contactForm"}>
+              <Forward />
+            </ForwardLink>
           </ActivitiesBtnContainer>
         </ActivitiesContainer>
       </SplitScreenContainerTop>
-      <SplitScreenContainerBottom>
+      <SplitScreenContainerBottom id="contactForm">
         <ActivitiesContainer>
           <ActivitiesTitleContainer>
             <Title>{t({ id: "activities.validateTitle" })}</Title>

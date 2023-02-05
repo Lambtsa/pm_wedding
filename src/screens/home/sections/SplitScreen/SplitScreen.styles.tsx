@@ -2,6 +2,7 @@ import { CONTAINER, MEDIA } from "@constants/layout";
 import Image from "next/image";
 import styled from "styled-components";
 import { ReactComponent as Dala } from "@assets/dalahast.svg";
+import Link from "next/link";
 
 export const SplitScreenContainerTop = styled.section`
   display: grid;
@@ -173,5 +174,21 @@ export const Dalahast = styled(Dala)`
   left: 16px;
   path {
     stroke: ${(props) => props.theme.colors.secondary};
+  }
+`;
+
+export const ForwardLink = styled(Link)`
+  scroll-behavior: smooth;
+
+  /* @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover */
+  @media (hover: hover) {
+    /* when hover is supported */
+    :hover {
+      svg {
+        path {
+          fill-opacity: 0.5;
+        }
+      }
+    }
   }
 `;

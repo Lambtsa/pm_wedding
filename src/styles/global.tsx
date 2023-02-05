@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
   #__next {
     width: 100%;
     min-height: 100vh;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
   }
 
   #__next {
