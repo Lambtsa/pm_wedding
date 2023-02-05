@@ -33,6 +33,7 @@ export const LocalisationWrapper = styled.div`
 export const LocalisationInnerContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(400px, 1fr);
   justify-items: center;
   align-content: center;
   gap: 16px;
