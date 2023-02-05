@@ -12,9 +12,10 @@ import {
   Dalahast,
   ActivityText,
   ForwardLink,
+  ImageWrapper,
 } from "./SplitScreen.styles";
-import Couple from "@assets/images/IMG_6151.webp";
-import Family from "@assets/images/IMG_5351.webp";
+import Couple from "@assets/images/IMG_6022.jpg";
+import Family from "@assets/images/IMG_5933.jpg";
 import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
 import { ReactComponent as Forward } from "@assets/forward.svg";
 import { Button } from "@components/Button";
@@ -26,16 +27,6 @@ import { useTranslation } from "@hooks/useTranslation";
 import { useLanguage } from "@context/LanguageContext";
 import { useToast } from "@context/ToastContext";
 import { config } from "config";
-
-// type ActivityType =
-//   | "horse"
-//   | "boules"
-//   | "climbing"
-//   | "volleyball"
-//   | "hiking"
-//   | "paragliding"
-//   | "yoga"
-//   | "spa";
 
 enum ActivityType {
   Horse = "horse",
@@ -256,7 +247,9 @@ export const SplitScreen = (): JSX.Element => {
   return (
     <>
       <SplitScreenContainerTop>
-        <Img alt="" src={Couple} />
+        <ImageWrapper>
+          <Img alt="" src={Family} />
+        </ImageWrapper>
         <ActivitiesContainer id="activities">
           <ActivitiesTitleContainer>
             <Title>{t({ id: "activities.selectTitle" })}</Title>
@@ -305,7 +298,9 @@ export const SplitScreen = (): JSX.Element => {
           </ActivitiesFormContainer>
           <Dalahast />
         </ActivitiesContainer>
-        <Img alt="" src={Family} />
+        <ImageWrapper>
+          <Img alt="" src={Couple} />
+        </ImageWrapper>
       </SplitScreenContainerBottom>
     </>
   );

@@ -16,10 +16,6 @@ export const SplitScreenContainerTop = styled.section`
   background-color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0% 150px, 100% 0%, 100% 100%, 0% 100%);
 
-  img {
-    margin-top: -150px;
-  }
-
   > div {
     /* Because of the slant the content doesn't look centered even though it is. We therefore use half of the slant height to readjust */
     margin-top: 75px;
@@ -141,10 +137,6 @@ export const SplitScreenContainerBottom = styled.section`
   background-color: ${(props) => props.theme.colors.primary};
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 150px), 0% 100%);
 
-  img {
-    margin-top: -150px;
-  }
-
   > div {
     /* Because of the slant the content doesn't look centered even though it is. We therefore use half of the slant height to readjust */
     margin-bottom: 75px;
@@ -161,11 +153,20 @@ export const SplitScreenContainerBottom = styled.section`
   }
 `;
 
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+`;
+
 export const Img = styled(Image)`
   width: 100%;
   object-fit: cover;
   z-index: 10;
-  height: calc(100% + 300px);
+  height: 100%;
+  /* height: calc(100% + 300px); */
 `;
 
 export const Dalahast = styled(Dala)`
