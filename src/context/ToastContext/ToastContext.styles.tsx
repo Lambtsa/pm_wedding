@@ -9,14 +9,11 @@ export const ToastsWrapper = styled.div`
   top: 0px;
   right: 0px;
   margin: 16px;
+  /* padding: 16px; */
+  max-width: 500px;
+  overflow-x: hidden;
 
   @media ${MEDIA.MOBILE} {
-    min-width: 100vw;
-    max-width: 100vw;
-  }
-
-  @media ${MEDIA.TABLET} {
-    max-width: 500px;
-    min-width: 400px;
+    max-width: 100%;
   }
 `;

@@ -50,6 +50,8 @@ export const ToastTextWrapper = styled.div`
   gap: 4px;
   align-items: flex-start;
   justify-content: center;
+  width: 100%;
+  overflow: hidden;
 `;
 
 export const ToastCloseBtn = styled.button`
@@ -64,6 +66,10 @@ export const ToastTitle = styled.h3`
   text-align: left;
   font-size: 16px;
   line-height: 16px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const ToastSubtitle = styled.p`
