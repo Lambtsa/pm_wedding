@@ -11,7 +11,6 @@ import { News } from "./sections/News";
 export const HomeScreen = (): JSX.Element => {
   return (
     <Main>
-      {/* TODO: Move sections into subfolder of home */}
       <Header />
       <Jumbotron />
       <Countdown />

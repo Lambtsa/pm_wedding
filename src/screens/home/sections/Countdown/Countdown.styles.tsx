@@ -11,7 +11,6 @@ export const CountdownContainer = styled.section`
   width: 100%;
   margin-top: -150px;
   color: ${(props) => props.theme.colors.white};
-  /* TODO: figure out mobile */
   clip-path: polygon(0% 150px, 100vw 0%, 100vw calc(100% - 150px), 0% 100%);
 
   @media ${MEDIA.TABLET} {

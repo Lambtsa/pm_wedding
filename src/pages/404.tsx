@@ -2,7 +2,6 @@ import { MetaData } from "@components/MetaData";
 import { pageData } from "@helpers/metadata";
 import { FourOhFour } from "@screens/fourOhFour";
 
-/* TODO: make custom 404 page */
 const Custom404 = () => {
   const { index } = pageData;
   return (
