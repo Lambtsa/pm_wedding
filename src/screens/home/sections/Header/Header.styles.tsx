@@ -14,6 +14,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  z-index: 100;
 `;
 
 export const HeaderLinksContainer = styled.nav`

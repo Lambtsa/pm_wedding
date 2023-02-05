@@ -9,12 +9,14 @@ export const CountdownContainer = styled.section`
   align-items: center;
   background-color: ${(props) => props.theme.colors.primary};
   width: 100%;
+  margin-top: -150px;
   color: ${(props) => props.theme.colors.white};
   /* TODO: figure out mobile */
-  clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+  clip-path: polygon(0% 150px, 100vw 0%, 100vw calc(100% - 150px), 0% 100%);
 
   @media ${MEDIA.TABLET} {
-    clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+    clip-path: polygon(0% 120px, 100vw 0%, 100vw calc(100% - 120px), 0% 100%);
+    margin-top: -120px;
   }
 `;
 

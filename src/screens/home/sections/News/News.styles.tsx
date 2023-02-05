@@ -1,4 +1,4 @@
-import { CONTAINER } from "@constants/layout";
+import { CONTAINER, MEDIA } from "@constants/layout";
 import styled from "styled-components";
 import { ReactComponent as Dala } from "@assets/dalahast.svg";
 
@@ -6,10 +6,14 @@ export const NewsContainer = styled.section`
   position: relative;
   margin-top: -150px;
   background-color: ${(props) => props.theme.colors.secondary};
-  min-height: calc(100vh - 300px);
+  height: 100%;
   color: ${(props) => props.theme.colors.white};
-  /* TODO: figure out mobile */
-  clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+  clip-path: polygon(0% 150px, 100vw 0%, 100vw calc(100% - 150px), 0% 100%);
+
+  @media ${MEDIA.TABLET} {
+    clip-path: polygon(0% 120px, 100vw 0%, 100vw calc(100% - 120px), 0% 100%);
+    margin-top: -120px;
+  }
 `;
 
 export const InnerContainer = styled.div`
@@ -19,7 +23,8 @@ export const InnerContainer = styled.div`
   justify-content: center;
   gap: 16px;
   padding: 200px 16px;
-  height: calc(100% + 300px);
+  /* height: calc(100% + 300px); */
+  min-height: 100%;
   max-width: ${CONTAINER.TABLET}px;
   margin: 0 auto;
 `;

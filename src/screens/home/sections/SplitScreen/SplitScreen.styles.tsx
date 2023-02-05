@@ -9,12 +9,11 @@ export const SplitScreenContainerTop = styled.section`
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-content: center;
-  min-height: 100vh;
   z-index: 100;
   overflow: hidden;
   margin-top: -150px;
   background-color: ${(props) => props.theme.colors.primary};
-  clip-path: polygon(0% 150px, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 150px, 100vw 0%, 100vw 100%, 0% 100%);
 
   > div {
     /* Because of the slant the content doesn't look centered even though it is. We therefore use half of the slant height to readjust */
@@ -23,6 +22,8 @@ export const SplitScreenContainerTop = styled.section`
 
   @media ${MEDIA.TABLET} {
     grid-template-columns: 1fr;
+    clip-path: polygon(0% 120px, 100vw 0%, 100vw 100%, 0% 100%);
+    margin-top: -120px;
 
     img {
       display: none;
@@ -132,10 +133,9 @@ export const SplitScreenContainerBottom = styled.section`
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-content: center;
-  min-height: 100vh;
   overflow: hidden;
   background-color: ${(props) => props.theme.colors.primary};
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 150px), 0% 100%);
+  clip-path: polygon(0% 0%, 100vw 0%, 100vw calc(100% - 150px), 0% 100%);
 
   > div {
     /* Because of the slant the content doesn't look centered even though it is. We therefore use half of the slant height to readjust */
@@ -145,7 +145,7 @@ export const SplitScreenContainerBottom = styled.section`
   @media ${MEDIA.TABLET} {
     grid-template-columns: 1fr;
     background-color: ${(props) => props.theme.colors.primaryDark};
-    clip-path: polygon(0% 0%, 100% 0%, 100% calc(100vh - 50px), 0% 100%);
+    clip-path: polygon(0% 0%, 100vw 0%, 100vw calc(100% - 120px), 0% 100%);
 
     img {
       display: none;

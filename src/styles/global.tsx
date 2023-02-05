@@ -15,7 +15,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1;
-    background-color: rgba(255, 249, 244);
+    /* background-color: rgba(255, 249, 244); */
+    background-color: black;
   }
   article,aside,details,figcaption,figure,
   footer,header,hgroup,menu,nav,section { 

@@ -10,17 +10,12 @@ export const LocalisationContainer = styled.section`
   background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
   margin-top: -150px;
-  min-height: calc(100vh + 300px);
   color: ${(props) => props.theme.colors.primary};
-  clip-path: polygon(0 150px, 100% 0, 100% calc(100% - 150px), 0 100%);
+  clip-path: polygon(0 150px, 100vw 0, 100vw calc(100% - 150px), 0 100%);
 
   @media ${MEDIA.TABLET} {
-    clip-path: polygon(
-      0 150px,
-      100% 0,
-      100% calc(100% - 150px),
-      0 calc(100% - 50px)
-    );
+    clip-path: polygon(0 120px, 100vw 0, 100vw calc(100% - 120px), 0 100%);
+    margin-top: -120px;
   }
 `;
 

@@ -7,7 +7,12 @@ export const ContactContainer = styled.section`
   width: 100%;
   margin-top: -150px;
   color: ${(props) => props.theme.colors.white};
-  clip-path: polygon(0% 100px, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0% 150px, 100vw 0, 100vw 100%, 0 100%);
+
+  @media ${MEDIA.TABLET} {
+    clip-path: polygon(0% 120px, 100vw 0, 100vw 100%, 0 100%);
+    margin-top: -120px;
+  }
 `;
 
 export const ContactOuterContainer = styled.div`

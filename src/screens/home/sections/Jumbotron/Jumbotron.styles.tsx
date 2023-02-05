@@ -7,8 +7,13 @@ export const JumbotronContainer = styled.section`
   align-items: center;
   background-color: ${(props) => props.theme.colors.secondary};
   width: 100%;
-  height: 100vh;
+  height: calc(100vh + 150px);
   color: ${(props) => props.theme.colors.white};
+  clip-path: polygon(0% 0%, 100vw 0%, 100vw calc(100% - 150px), 0% 100%);
+
+  @media ${MEDIA.TABLET} {
+    clip-path: polygon(0% 0%, 100vw 0%, 100vw calc(100% - 120px), 0% 100%);
+  }
 `;
 
 export const JumbotronInnerContainer = styled.div`
@@ -19,6 +24,7 @@ export const JumbotronInnerContainer = styled.div`
   gap: 16px;
   padding: 16px;
   max-width: ${CONTAINER.TABLET}px;
+  margin-top: -75px;
 
   svg:last-child {
     rotate: 180deg;
