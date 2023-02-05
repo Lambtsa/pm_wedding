@@ -24,6 +24,10 @@ export const LocalisationWrapper = styled.div`
   flex-direction: column;
   gap: 16px;
   padding: 200px 16px;
+
+  @media ${MEDIA.TABLET} {
+    padding-bottom: 100px;
+  }
 `;
 
 export const LocalisationInnerContainer = styled.div`

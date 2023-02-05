@@ -55,6 +55,10 @@ export const Dalahast = styled(Dala)`
   path {
     stroke: ${(props) => props.theme.colors.primary};
   }
+
+  @media ${MEDIA.TABLET} {
+    bottom: 136px;
+  }
 `;
 
 export const NewsArticleContainer = styled.div`
