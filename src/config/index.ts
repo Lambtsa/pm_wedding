@@ -20,9 +20,9 @@ export const configuration: ConfigType = {
     websocket: "ws://localhost:8080",
   },
   prod: {
-    backendUrl: "https://api.lambtsa.com",
-    frontendUrl: "https://lambtsa.com",
-    websocket: "wss://api.lambtsa.com",
+    backendUrl: "https://api.pierreetmichelle2023.fr",
+    frontendUrl: "https://pierreetmichelle2023.fr",
+    websocket: "wss://api.pierreetmichelle2023.fr",
   },
 };
 
