@@ -40,8 +40,11 @@ export const ToastContainer = styled.div<{
   border-radius: 10px;
   padding: 16px;
   gap: 12px;
-  transition: transform 0.6s ease-in-out;
-  animation: ${ToastInRight} 0.7s;
+
+  @supports (transition: transform) {
+    transition: transform 0.6s ease-in-out;
+    animation: ${ToastInRight} 0.7s;
+  }
 `;
 
 export const ToastTextWrapper = styled.div`

@@ -22,6 +22,7 @@ interface NewsItem {
   id: string;
   title: string;
   description: string;
+  language: string;
   emoji: string;
   created_at: string;
 }
@@ -37,12 +38,16 @@ export const News = (): JSX.Element | null => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`${config.backendUrl}/api/news`);
-      const data = await response.json();
-      setNewsItems(data);
+      const data = (await response.json()) as NewsItem[];
+
+      const newByLocale = data.filter(
+        (newsItem) => newsItem.language === locale
+      );
+      setNewsItems(newByLocale);
     };
 
     fetchData();
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -58,10 +63,14 @@ export const News = (): JSX.Element | null => {
       }
 
       if (data.event === "latestNews") {
-        setNewsItems(data.payload as NewsItem[]);
+        const received = data.payload as NewsItem[];
+        const newByLocale = received.filter(
+          (newsItem) => newsItem.language === locale
+        );
+        setNewsItems(newByLocale);
       }
     };
-  }, []);
+  }, [locale]);
 
   if (!newsItems.length) {
     return null;
