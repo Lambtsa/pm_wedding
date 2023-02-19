@@ -87,6 +87,7 @@ export const ActivityBtn = styled.button<{
   justify-content: center;
   border: 1px solid ${(props) => props.theme.colors.secondary70};
   border-radius: 10px;
+  padding: 8px;
   width: 120px;
   height: 120px;
   color: ${(props) => props.theme.colors.secondary};
