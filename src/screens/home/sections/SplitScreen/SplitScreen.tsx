@@ -27,6 +27,7 @@ import { useTranslation } from "@hooks/useTranslation";
 import { useLanguage } from "@context/LanguageContext";
 import { useToast } from "@context/ToastContext";
 import { config } from "config";
+import { TranslationKey } from "@helpers/language";
 
 enum ActivityType {
   Horse = "horse",
@@ -41,7 +42,7 @@ enum ActivityType {
 
 interface Activity {
   id: ActivityType;
-  title: FormatjsIntl.Message["ids"];
+  title: TranslationKey;
   icon: string;
 }
 

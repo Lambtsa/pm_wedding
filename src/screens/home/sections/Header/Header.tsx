@@ -16,11 +16,12 @@ import { ReactComponent as BurgerMenu } from "@assets/burger.svg";
 import { ReactComponent as CloseMenu } from "@assets/close24.svg";
 import { useCallback, useMemo, useState } from "react";
 import { v4 as uuid } from "uuid";
+import { TranslationKey } from "@helpers/language";
 
 interface LinksType {
   id: string;
   uri: string;
-  text: FormatjsIntl.Message["ids"];
+  text: TranslationKey;
 }
 
 export const Header = (): JSX.Element => {

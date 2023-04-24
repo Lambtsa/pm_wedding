@@ -1,8 +1,9 @@
 import { config } from "config";
 import { routes } from "./routes";
+import { TranslationKey } from "./language";
 export interface MetaData {
-  title: FormatjsIntl.Message["ids"];
-  description: FormatjsIntl.Message["ids"];
+  title: TranslationKey;
+  description: TranslationKey;
   url: string;
 }
 
